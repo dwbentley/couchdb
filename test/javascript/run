@@ -122,7 +122,7 @@ def main():
     run_list = ["test/javascript/tests"] if not opts.suites else opts.suites
     run_list = build_test_case_paths(run_list)
     ignore_list = build_test_case_paths(opts.ignore)
-    tests = list(set(run_list)^set(ignore_list))
+    tests = list(set(run_list)-set(ignore_list))
 
     if opts.start is not None:
         tmp = []
